@@ -239,9 +239,51 @@
         height: 50px;
         width: 340px;
         margin: 10px auto 0;
-        font-size :30px;
-        
+        display: flex;
+        .card1::after {
+          content: '\f1f0';
+          font-family:'Font Awesome 5 Brands';
+          font-size: 30px;
+          margin-right: 10px;
+        }
+        .card2::after {
+          content: '\f1f1';
+          font-family:'Font Awesome 5 Brands';
+          font-size: 30px;
+          margin-right: 10px;
+        }
+        .card3::after {
+          content: '\f1f4';
+          font-family:'Font Awesome 5 Brands';
+          font-size: 30px;
+          margin-right: 10px;
+        }
+        .card4::after {
+          content: '\f24b';
+          font-family:'Font Awesome 5 Brands';
+          font-size: 30px;
+          margin-right: 10px;
+        }
+        .card5::after {
+          content: '\f1f3';
+          font-family:'Font Awesome 5 Brands';
+          font-size: 30px;
+          margin-right: 10px;
+        }
+        .card6::after {
+          content: '\f24c';
+          font-family:'Font Awesome 5 Brands';
+          font-size: 30px;
+          margin-right: 10px;
+        }
+        .card7::after {
+          content: '\f1f2';
+          font-family:'Font Awesome 5 Brands';
+          font-size: 30px;
+        }
       }
+        
+    }
       .single-box26{
         width: 343px;
         height: 70px;
@@ -346,4 +388,3 @@
       }
     }
   }
-}
