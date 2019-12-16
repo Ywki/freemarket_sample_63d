@@ -13,10 +13,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    
     @item = Item.new(item_params)
     respond_to do |format|
-     
       if @item.save
           params[:thumbnails][:images].each do |image|
             @item.thumbnails.create(images: image, item_id: @item.id)
