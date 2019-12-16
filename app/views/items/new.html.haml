@@ -18,7 +18,7 @@
         .sell-inner-container__box__max
           最大10枚までアップロードできます
         = f.fields_for :thumbnails do |image|
-          .dropzone-container
+          .dropzone-container.clearfix
             #preview
             .dropzone-area
               = image.label :images, class: "dropzone-box", for: "upload-image" do
