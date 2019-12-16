@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_105245) do
     t.integer "delivery_id"
     t.integer "shipping_method_id"
     t.integer "estimated_shipping_date_id"
+    t.integer "category_id"
     t.integer "price"
     t.text "text"
     t.integer "inappropriate_item"
