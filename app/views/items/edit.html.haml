@@ -33,12 +33,14 @@
           %h2.sent-left 商品名
           %h2.sell-right 必須
         .sell__inner__content__name
-          = f.text_field :name, placeholder: "商品名（必須 40文字まで)",class: :input_default
+          .input-default
+            = f.text_field :name, placeholder: "商品名（必須 40文字まで)"
         .sell__inner__content__description
           %h2.sent-left 商品の説明
           %h2.sell-right 必須
         .sell__inner__content__deteil
-          = f.text_area :text,placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5" ,class: :textarea_default 
+          .textarea-default
+            = f.text_area :text,placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5" ,class: :textarea_default 
       .sell__inner__category  
         %h2.text-inline  商品詳細
         .category-box
@@ -50,7 +52,7 @@
               %i.icon-arrow-sell
                 = fa_icon "chevron-down"
               .select-sell
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
+                = f.collection_select :category_id, Category.all, :id, :name 
           .sell__inner__category__status
             %h2.sent-left 商品の状態
             %h2.sell-right 必須
@@ -100,7 +102,8 @@
                 %h2.sell-right 必須
               .sell-price-input  
                 %h2.price-box-top ¥
-                = f.text_field :price, class: :input_sell
+                .input-sell
+                  = f.text_field :price, class: :input_sell
             %li.sell-price-center
               .l-left
                 販売手数料 (10%)

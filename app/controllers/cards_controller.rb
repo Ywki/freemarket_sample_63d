@@ -23,7 +23,7 @@ class CardsController < ApplicationController
       if @card.save
         redirect_to cards_path
       else
-        redirect_to route_patu
+        redirect_to route_path
       end
     end
   end
