@@ -26,6 +26,7 @@
               取引中の商品がありません
             %li.bought__text__list--message
               - @items.each do |item|
+                
                 = link_to item.name, item_path(item)
                 
   .users__show__bottom
