@@ -41,13 +41,14 @@ class ItemsController < ApplicationController
   end
 
   def details
-    
+    @buyer
   end
   
   def address
   end
 
   def buy
+    redirect_to root_path if @item.buyer_id != nil
     @price = "¥#{@item.price.to_s(:delimited)}"
   end
 
@@ -59,11 +60,8 @@ class ItemsController < ApplicationController
     
      # 購入した際の情報を元に引っ張ってくる
      card = current_user.card
-      
-      #.find(params[id])後にしようします。
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-     # キーをセットする(環境変数においても良い)
       Payjp::Charge.create(
       amount: @item.price, #支払金額
       customer: card.customer_id, #顧客ID
@@ -71,13 +69,12 @@ class ItemsController < ApplicationController
       )
      # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
       if @item.update(buyer_id: current_user.id)
-        
         flash[:notice] = '購入しました。'
         # render template: "cards/completed" 
         redirect_to controller: "cards", action: 'completed'
       else
         flash[:alert] = '購入に失敗しました。'
-        # redirect_to controller: "items", action: 'show'
+        redirect_to action: 'buy'
       end
      #↑この辺はこちら側のテーブル設計どうりに色々しています
     end
@@ -114,6 +111,7 @@ private
     @state = @item.state.name
     @delivery = @item.delivery.name
     @date = @item.estimated_shipping_date.name
+    @buyer= @item.buyer_id.to_s
   end
 
   def set_card

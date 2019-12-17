@@ -5,6 +5,11 @@
         .contents__category__main__item__box__in__image
           = link_to details_item_path(item) do
             = image_tag "#{item.thumbnails.last.images}"
+            -if item.buyer_id.present? 
+              .items-box_photo__sold
+                .items-box_photo__sold__inner
+                  SOLD
+        
         .contents__category__main__item__box__in__price
           .contents__category__main__item__box__in__price__tag
             = item.price.to_s(:delimited)

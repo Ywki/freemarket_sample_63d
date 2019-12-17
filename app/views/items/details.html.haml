@@ -117,7 +117,10 @@
             送料込み
         %ul.item-btn
           %li.item-btn-in
-            = link_to "購入画面に進む", buy_item_path(@item)
+            -if @item.buyer_id.present? 
+              = link_to "完売品　Topへ戻る",root_path
+            -else
+              = link_to "購入画面に進む", buy_item_path(@item)
           
 
         .item-description
