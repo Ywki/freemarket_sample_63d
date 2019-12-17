@@ -8,7 +8,7 @@
     .top-ber__box2
       %i= fa_icon "chevron-right", class:"arrow"
     .top-ber__box3
-      = current_user.nickname
+      = @user.nickname
 
 .zoom
   .zoom__right
@@ -17,14 +17,14 @@
         .zoom__right__up__profil--user
           //ユーザーのプロフィール写真登録
         .zoom__right__up__profil--name
-          = current_user.nickname
+          = @user.nickname
         .zoom__right__up__profil__box
           .zoom__right__up__profil__box--goods
             評価
           .zoom__right__up__profil__box--items
             出品数
           .zoom__right__up__profil__box--items--number
-            = current_user.items.length
+            = @user.items.length
     .zoom__good
       .zoom__good__box
         .zoom__good__box__left
