@@ -185,7 +185,12 @@
           - @items.each do |item|
             .image-box
               .image-box-in
-                = image_tag "#{item.thumbnails.last.images}", width: "220", height: "220"
+                = link_to details_item_path(item) do
+                  = image_tag "#{item.thumbnails.last.images}", width: "220", height: "220"
+                  -if item.buyer_id.present? 
+                    .items-box_photo__sold
+                      .items-box_photo__sold__inner
+                        SOLD
               .text-box
                 .text-box-in
                   = item.name
