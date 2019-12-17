@@ -117,7 +117,7 @@
             送料込み
         %ul.item-btn
           %li.item-btn-in
-            = link_to "編集する",  edit_item_path(@item)
+            = link_to "編集する",  edit_item_path(@item), data: {"turbolinks"=>false}
         %ul.item-btn1
           %li.item-btn-in
             = link_to "削除", item_path(@item), method: :delete

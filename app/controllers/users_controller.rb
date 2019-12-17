@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:saling, :selling, :sold]
 
   def new
+    
   end
 
   def create

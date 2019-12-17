@@ -10,7 +10,7 @@
       %li
         = link_to "いいね！一覧", class: "note"
       %li
-        = link_to "出品する", new_item_path, class: "note"
+        = link_to "出品する", new_item_path, data: {"turbolinks"=>false}, class: "note"
       %li
         = link_to "出品した商品・出品中", selling_items_user_path, class: "note"
       %li
@@ -44,7 +44,7 @@
       %li
         = link_to "発送元・お届け先住所変更", class: "note"
       %li
-        = link_to "支払い方法",new_card_path, class: "note"
+        = link_to "支払い方法",new_card_path, data: {"turbolinks"=>false}, class: "note"
       %li
         = link_to "メール/パスワード", class: "note"
       %li
