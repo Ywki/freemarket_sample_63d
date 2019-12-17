@@ -9,11 +9,11 @@
       .sale__item__box__main
         出品した商品
       .sale__item__box__sale
-        出品中
+        = link_to "出品した商品・出品中", selling_items_user_path, class: "note"
       .sale__item__box__sell
-        取引中
+        = link_to "出品した商品・取引中", selling_user_path, class: "note"
       .sale__item__box__sold
-        売却済み
+        = link_to "出品した商品・売却済み", sold_user_path, class: "note"
       .sale__item__box__list
         .saling
         - if @items.present?

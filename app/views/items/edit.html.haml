@@ -16,29 +16,31 @@
           %h2.sell-right 必須
         .sell__inner__upload__img-text2
           %h2.img-text-up 最大10枚までアップロードできます
-        .sell__inner__upload__img-file
-          .sell__inner__upload__img-file__box
-            = image_tag "#{@item.image}"
-          .sell__inner__upload__img-file__container
-            %label
-              = f.file_field :image, class: 'hidden', style: "display: none;" 
-              .file-box
-                %pre.file-up
-                  :preserve
-                    ドラッグアンドドロップ
-                    またはクリックしてファイルをアップロード
+        = f.fields_for :thumbnails do |image|
+          .sell__inner__upload__img-file
+            = image_tag "#{@item.thumbnails.last.images}"
+            .sell__inner__upload__img-file__container
+              %label
+                = image.file_field :images, class: 'hidden', style: "display: none;"
+                .file-box
+                  %pre.file-up
+                    :preserve
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
 
       .sell__inner__content
         .sell__inner__content__item
           %h2.sent-left 商品名
           %h2.sell-right 必須
         .sell__inner__content__name
-          = f.text_field :name, placeholder: "商品名（必須 40文字まで)",class: :input_default
+          .input-default
+            = f.text_field :name, placeholder: "商品名（必須 40文字まで)"
         .sell__inner__content__description
           %h2.sent-left 商品の説明
           %h2.sell-right 必須
         .sell__inner__content__deteil
-          = f.text_area :text,placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5" ,class: :textarea_default 
+          .textarea-default
+            = f.text_area :text,placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5" ,class: :textarea_default 
       .sell__inner__category  
         %h2.text-inline  商品詳細
         .category-box
@@ -50,7 +52,7 @@
               %i.icon-arrow-sell
                 = fa_icon "chevron-down"
               .select-sell
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
+                = f.collection_select :category_id, Category.all, :id, :name 
           .sell__inner__category__status
             %h2.sent-left 商品の状態
             %h2.sell-right 必須
@@ -100,7 +102,8 @@
                 %h2.sell-right 必須
               .sell-price-input  
                 %h2.price-box-top ¥
-                = f.text_field :price, class: :input_sell
+                .input-sell
+                  = f.text_field :price, class: :input_sell
             %li.sell-price-center
               .l-left
                 販売手数料 (10%)
@@ -141,4 +144,4 @@
         = image_tag "fmarket_logo_white.svg" , height: "60", width: "150"
     .footer__box3
 
-      © 2019 Mercari        
+      © 2019 Mercari

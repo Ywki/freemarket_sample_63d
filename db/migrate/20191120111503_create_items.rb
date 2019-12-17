@@ -7,6 +7,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :delivery_id
       t.integer :shipping_method_id
       t.integer :estimated_shipping_date_id
+      t.integer :category_id
       t.integer :price
       t.text    :text
       t.integer :inappropriate_item

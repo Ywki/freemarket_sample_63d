@@ -13,8 +13,7 @@
           .item-phot-low
             .item-phot-low-in
               .thumbnail
-                - @item.thumbnails.each do |thumbnail|
-                  = image_tag "#{thumbnail.images}"
+                = image_tag "#{@item.thumbnails.last.images}"
 
         .item-detail-table
           .item-detail-table-box
@@ -118,7 +117,11 @@
             送料込み
         %ul.item-btn
           %li.item-btn-in
-            = link_to "この商品を削除する", item_path(@item), method: :delete
+            = link_to "編集する",  edit_item_path(@item)
+        %ul.item-btn1
+          %li.item-btn-in
+            = link_to "削除", item_path(@item), method: :delete
+        
           
 
         .item-description

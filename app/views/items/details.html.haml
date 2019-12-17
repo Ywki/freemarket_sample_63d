@@ -125,7 +125,7 @@
 
         .item-description
           .item-description__in
-            .p
+            %p
               = @item.text
             
         .item-btn-box
@@ -179,7 +179,7 @@
     .another-item
       .another-item-in
         = "#{@item.user.nickname}さんのその他の出品"
-    .another-image
+    .another-image.clearfix
       .another-image-box
         .another-image-box-in
           - @items.each do |item|

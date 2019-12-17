@@ -18,7 +18,7 @@
         .sell-inner-container__box__max
           最大10枚までアップロードできます
         = f.fields_for :thumbnails do |image|
-          .dropzone-container
+          .dropzone-container.clearfix
             #preview
             .dropzone-area
               = image.label :images, class: "dropzone-box", for: "upload-image" do
@@ -60,7 +60,7 @@
         .sell__inner__category__box1
           .select-sell
             .select-sell
-              = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+              = f.collection_select :category_id, Category.all, :id, :name
             %i.icon-arrow-sell
               = fa_icon "chevron-down"
         .sell__inner__category__status
@@ -87,6 +87,7 @@
         .select-sell
           .select-sell
             = f.collection_select :delivery_id, Delivery.all, :id, :name 
+          %i.icon-arrow-sell 
             = fa_icon "chevron-down"
         .sell__inner__delivery__region
           発送元の地域
@@ -152,7 +153,7 @@
             に同意したことになります。
       .sell__inner__privacy__exhibit
         = f.submit "出品する", class: "exhibit_btn"
-        %a.sell-back(href= "user_path") もどる
+        %a.sell-back(href= "/") もどる
 .main-footer
   .footer
     %ul.footer__box

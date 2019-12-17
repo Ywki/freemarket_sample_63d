@@ -8,24 +8,23 @@
     .top-ber__box2
       %i= fa_icon "chevron-right", class:"arrow"
     .top-ber__box3
-      = current_user.nickname
+      = @user.nickname
 
 .zoom
   .zoom__right
     .zoom__right__up
       .zoom__right__up__profil
         .zoom__right__up__profil--user
-          //= image_tag current_user.image, class: "user--image"
+          //ユーザーのプロフィール写真登録
         .zoom__right__up__profil--name
-          name
-          //= current_user.name, class: "user--name"
+          = @user.nickname
         .zoom__right__up__profil__box
           .zoom__right__up__profil__box--goods
             評価
-            //= current_user.goods, class: "user--goods"
           .zoom__right__up__profil__box--items
             出品数
-            //= current_user.items, class: "user--items"
+          .zoom__right__up__profil__box--items--number
+            = @user.items.length
     .zoom__good
       .zoom__good__box
         .zoom__good__box__left

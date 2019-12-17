@@ -10,10 +10,10 @@
 
     .contents__box{
       margin: 40px auto 0;
-      padding: 24px 40px 40px;
+      padding: 24px 40px 50px;
       background-color: #ffffff;
       width: 700px;
-      height: 1375px;
+      height: 100%;
       .contents__item__name{
         font-size: 24px;
         text-align: center;
@@ -25,7 +25,7 @@
 
       .contents__item__main{
         margin: 16px 0 0;
-        height: 420px;
+
         
         .item-phot{
           background-color: #f5f5f5;
@@ -527,26 +527,50 @@
           width: 620px;
           height: 60px;
           margin: 16px 0 0 ;
-          
           background-color: #EA352D;
           .item-btn-in{
             font-size: 25px;
             font-weight: bold;
             text-align: center;
-            padding-top: 10px;
             a{
               color: #fff;
+              display: block;
+              width: 620px;
+              line-height: 60px;
+              text-decoration: none;
             }
           }
-        }
+        }  
+        .item-btn1{
+          width: 620px;
+          height: 60px;
+          margin: 16px 0 0 ;
+          background-color: #aaa;
+          .item-btn-in{
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            a{
+              color: #fff;
+              display: block;
+              width: 620px;
+              line-height: 60px;
+              text-decoration: none;
+            }
+          }
+        }  
         .item-description{
           width: 620px;
-          height: 540px;
           margin: 32px 0 0 ;
+          
         
-          .item-description__in{
+          &__in{
             font-size: 18px;
             color: #333333;
+            word-wrap: break-word;
+            p{
+              word-wrap: break-word;
+            }
           }
         }
         .item-btn-box{
@@ -755,12 +779,12 @@
       width: 100%;
       .another-image-box{
         width: 720px;
-        height: 700px;
+        height: 100%;
         margin: 24px auto 0;
         // border: solid 1px black;
         .another-image-box-in{
           width: auto;
-          height: 700px;
+          height: 100%;
           .image-box{
             width: 220px;
             height: 330px;
@@ -829,7 +853,6 @@
       .another-brand-in{
         margin: 24px auto 8px;
         width: 700px;
-        height: 30px;
         font-size: 22px;
         font-weight: bold;
         color: #0099E8 ;
@@ -839,12 +862,11 @@
       width: 100%;
       .another-brand-image-box{
         width: 700px;
-        height: 738px;
+        height: 100%;
         margin: 24px auto 0;
         // border: solid 1px black;
         .another-image-box-in{
           width: 700px;
-          height: 350px;
           display: flex;
           .image-box{
             width: 220px;

@@ -15,17 +15,15 @@
         .right__up
           .right__up__profil
             .right__up__profil--user
-              //= image_tag current_user.image, class: "user--image"
             .right__up__profil--name
-              name
-              //= current_user.name, class: "user--name"
+              = current_user.nickname
             .right__up__profil__box
               .right__up__profil__box--goods
                 評価
-                //= current_user.goods, class: "user--goods"
               .right__up__profil__box--items
                 出品数
-                //= current_user.items, class: "user--items"
+              .right__up__profil__box--items-number
+                = current_user.items.length
       .right__middle
         %ul.tab
           %li.tab__info.active
