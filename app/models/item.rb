@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :estimated_shipping_date
   belongs_to_active_hash :state
   belongs_to_active_hash :shipping_method
+  belongs_to_active_hash :category
   belongs_to :user, optional: true
   has_many :comments
   has_many :goods

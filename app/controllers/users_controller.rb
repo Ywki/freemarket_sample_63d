@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:saling, :selling, :sold]
+  before_action :set_root, except: [:new, :create, :login, :zoom]
 
   def new
     
@@ -38,10 +38,7 @@ class UsersController < ApplicationController
   end
 
   def zoom
-    
-  end
-  
-  def registration
+    @user = User.find(params[:id])
   end
 
   def profile
@@ -59,10 +56,6 @@ class UsersController < ApplicationController
     @birthday3 = current_user.birthday_day.name
   end
 
-  def saling
-    @items = current_user.saling_items
-  end
-
   def selling
     @items = current_user.selling_items
   end
@@ -72,14 +65,13 @@ class UsersController < ApplicationController
   end
 
   def selling_items
-    @items = Item.where(saler_id: current_user.id)
+    @items = current_user.saling_items
   end
 
   private
 
-  def set_user
-    user = User.find(params[:id])
+  def set_root
+    redirect_to new_user_session_path unless user_signed_in?
   end
-
 
 end
