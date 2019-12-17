@@ -1,6 +1,6 @@
 - if user_signed_in?
   .sell-icon
-    = link_to new_item_path do
+    = link_to new_item_path, data: {"turbolinks"=>false} do
       .red-circle
         %p.text 出品
         = fa_icon 'camera', class: "camera"

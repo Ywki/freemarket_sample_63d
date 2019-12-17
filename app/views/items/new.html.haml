@@ -19,7 +19,7 @@
           最大10枚までアップロードできます
         = f.fields_for :thumbnails do |image|
           .dropzone-container.clearfix
-            #preview
+            #preview 
             .dropzone-area
               = image.label :images, class: "dropzone-box", for: "upload-image" do
                 .input_area
@@ -152,7 +152,7 @@
             = link_to "加盟店規約", "#"
             に同意したことになります。
       .sell__inner__privacy__exhibit
-        = f.submit "出品する", class: "exhibit_btn"
+        = f.submit "出品する",  data: {"turbolinks"=>false}, class: "exhibit_btn"
         %a.sell-back(href= "/") もどる
 .main-footer
   .footer

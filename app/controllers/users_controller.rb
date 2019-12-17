@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_root, except: [:new, :create, :login, :zoom]
 
   def new
+    
   end
 
   def create
